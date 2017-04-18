@@ -39,8 +39,8 @@ However, this hierarchy can also be used in different ways. When playing songs i
 | 39    |  1    |     0    | 1        | "come on egg" |
 | 39    |  1    |     1    | 0        | "hmmm, let's see" |
 | 39    |  1    |     1    | 1        | "hmm, what have we have here?" |
-| 39    |  1    |     1    | 1        | "oooh, very interesting" |
-| 39    |  1    |     1    | 1        | "hmmm" |
+| 39    |  1    |     1    | 2        | "oooh, very interesting" |
+| 39    |  1    |     1    | 3        | "hmmm" |
 | 39    |  1    |     2    | 0        | blow |
 | 39    |  1    |     3    | 0        | blow nose? |
 | 39    |  1    |     4    | 0        | blow |
@@ -569,6 +569,19 @@ However, this hierarchy can also be used in different ways. When playing songs i
 | 57    |   3   |     0    | 3        | "oooh, nice shot, very nice" |
 | 57    |   3   |     0    | 4        | "oooh, nice shot, very bee-yu-tiful" |
 | 57    |   3   |     0    | 5        | "ok, act natural" |
+| 58    |   0   |     0    | 0        | "From our buddy, so exciting" |
+| 58    |   0   |     0    | 1        | "gimme, gimme, gimme" |
+| 58    |   0   |     0    | 2        | "best news evah" |
+| 58    |   0   |     0    | 3        | "daboo daboo na way" |
+| 58    |   0   |     0    | 4        | "ermahgerd" |
+| 58    |   0   |     0    | 5        | "ahem, oo, for kah" |
+| 58    |   0   |     1    | 0        | "ooh, let's give gift too" |
+| 58    |   0   |     1    | 1        | "ooh, we should give give too, oh yeah" |
+| 59    |   0   |     0    | 0        | "hmmm, let's see" |
+| 59    |   0   |     0    | 1        | "hmm, what have we have here?" |
+| 59    |   0   |     0    | 2        | "oooh, very interesting" |
+| 59    |   0   |     0    | 3        | "hmmm" |
+| 59    |   0   |     1    | 0        | "so much stuff, oh let's use it." |
 
 
 

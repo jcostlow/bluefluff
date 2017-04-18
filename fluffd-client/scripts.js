@@ -35,24 +35,25 @@ function handle_enter_action() {
 }
 
 // send a button command. First pull off the action, then the parameters.
-function sendbuttoncmd(d) {
-	var val=JSON.parse(d);
-	var action = Object.keys(val)[0];
-	var params=val[action];
+function handle_button_click(cmd) {
+	$("#buttons .button").click(function() {
+		var button = commands[cmd].buttons[$(this).data("buttonid")];
+		console.log(button);
 
-	// For now: Always send all commands to all furbies connected to fluffd
-	$.post(fluffd_url("cmd" + "/" + action), JSON.stringify({
-		params:params
-	}), function(res) {
-		if (res != "ok")
-			alert(res);
+		// For now: Always send all commands to all furbies connected to fluffd
+		$.post(fluffd_url("cmd" + "/" + button.cmd), JSON.stringify({
+			params : button.params
+		}), function(res) {
+			if (res != "ok")
+				alert(res);
+		});
 	});
 }
 
 // New action in the left panel selected
 function handle_select_action() {
 	$(".action").click(function() {
-		cmd = $(this).data("cmd");
+		var cmd = $(this).data("cmd");
 
 		// Make selection
 		$(".action").each(function() {
@@ -77,17 +78,16 @@ function handle_select_action() {
 				.append($("<input type=\"text\">").addClass("param_value"))
 			);
 		}
-		for (var button in commands[cmd].buttons) {
-			var input=document.createElement("button");
-			input.className="button";
-			input.value=JSON.stringify(commands[cmd].buttons[button]);
-			input.onclick=function() {sendbuttoncmd(this.value);}
-			var text = document.createTextNode(button);
-			input.appendChild(text);
-			$("#buttons")//.append($("<div>").addClass("button")
-					     .append(input) ;
-		}
+
+		for (var id in commands[cmd].buttons)
+			$("#buttons").append($("<input type=\"button\">")
+				.addClass("button")
+				.data("buttonid", id)
+				.attr("value", commands[cmd].buttons[id].readable));
+
+
 		handle_enter_action();
+		handle_button_click(cmd);
 
 		if (!("params" in commands[cmd] || "buttons" in commands[cmd])) {
 			$("#noparams").show();

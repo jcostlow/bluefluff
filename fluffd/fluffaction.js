@@ -214,39 +214,39 @@ commands["dlc_deactivate"] = {
 	}
 }
 
-// This is section is for preprogrammed buttons that you can add yourself.
+/*** Preprogrammed buttons that you can add yourself ***/
 commands["other"] = {
 	run : function(fluff, params, callback) {
 		fluff.generalPlusWrite(new Buffer([0x13, 0x00, params.input, params.index, params.subindex, params.specific]), callback);
 	},
 	readable : "Preprogrammed Actions",
 	description : "Furby move / talk buttons",
-        buttons : {
-	    name : {"setname":{"name":3}},
-	    giggle : {"action":{"input":55,"index":2,"subindex":14,"specific":0}},
-	    gigglefart : {"action":{"input":45,"index":0,"subindex":2,"specific":5}},
-	    puke : {"action":{"input":56,"index":3,"subindex":15,"specific":1}},
-	    "gonna be good" : {"action":{"input":55,"index":0,"subindex":1,"specific":0}},
-	    perfect : {"action":{"input":55,"index":1,"subindex":2,"specific":1}},
-	    "the best" : {"action":{"input":55,"index":1,"subindex":4,"specific":0}},
-	    "get started" : {"action":{"input":42,"index":0,"subindex":4, "specific":4}},
-	    "get started" : {"action":{"input":42,"index":0,"subindex":4, "specific":2}},
-	    "so much to do": {"action":{"input":42,"index":0,"subindex":0,"specific":0}},
-	    "Gonna watch all the things":{"action":{"input":44,"index":0,"subindex":0,"specific":1}},
-	    "this is happening!":{"action":{"input":44,"index":0,"subindex":0,"specific":4}},
-	    "ermagerd":{"action":{"input":44,"index":0,"subindex":0,"specific": 7}},
-	    "give little guy a hand":{"action":{"input":45,"index":0,"subindex":7,"specific":3}},
-	    "Thank you":{"action":{"input":48,"index":0,"subindex":0,"specific":1}},
-	    "Challenge accepted":{"action":{"input":54,"index":0,"subindex":0,"specific":1}},
-	    "legendary!":{"action":{"input":39,"index":3,"subindex":8,"specific":1}},
-	    beatbox:{"action":{"input":39,"index":1,"subindex":13,"specific":2}},
-	    ermagerd:{"action":{"input":39,"index":2,"subindex":4,"specific":5}},
-	    "We rule! They drool!":{"action":{"input":55,"index":1,"subindex":4,"specific":1}},
-	    "bye-bye":{"action":{"input":43,"index":0,"subindex":10,"specific":3}},
+	buttons : {
+		"Hey" : {"readable" : "Heeey", "cmd" : "action", "params" : {"input" : 43, "index" : 0, "subindex" : 0, "specific" : 5}},
+		"name" : {"readable" : "Say a Name", "cmd" : "setname", "params" : {"name" : 3}},
+		"the best" : {"readable" : "We the Best!", "cmd" : "action", "params" : {"input" : 55,"index" : 1,"subindex" : 4,"specific" : 0}},
+		"somuchtodo": {"readable" : "So much to do!", "cmd" : "action", "params": {"input" : 42, "index" : 0, "subindex" : 0, "specific" : 0}},
+		"getstarted" : {"readable" : "Get the party Started", "cmd" : "action", "params" : {"input" : 42, "index" : 0, "subindex" : 4, "specific" : 2}},
+		"giveahand" : {"readable" : "Give the little guy a hand", "cmd" : "action", "params" :{ "input" : 45, "index" : 0, "subindex" : 7, "specific" : 3}},
+		"thishappening" : {"readable" : "This is Happening!", "cmd" : "action", "params" : {"input" : 44, "index" : 0, "subindex" : 0, "specific" : 4}},
+		"watchall" : {"readable" : "Watch the Things", "cmd" : "action", "params": {"input" : 44, "index" : 0, "subindex" : 0, "specific" : 1}},
+		"Challengeaccepted" : {"readable" : "Challenge Accepted", "cmd" : "action", "params" : { "input" : 54, "index" : 0, "subindex" : 0 ,"specific" : 1}},
+		"nope" : {"readable" : "Nope!","cmd" : "action", "params" : {"input" : 55, "index" : 2, "subindex" : 4, "specific" : 0}},
+		"ruledrool":{"readable" : "We Rule, they Drool!", "cmd" : "action", "params" : {"input" : 55, "index" : 1, "subindex" : 4, "specific" : 1}},
+		"dudereally" : {"readable" : "Dude, really?", "cmd" : "action", "params" : {"input" : 44, "index" : 4, "subindex" : 0, "specific" : 4}},
+		"nonsense" : {"readable" : "Thank You x3", "cmd" : "action", "params" : { "input" : 48, "index" : 0, "subindex" : 0,"specific" : 1}},
+		"firmno" : {"readable" : "No x3", "cmd" : "action", "params" : { "input" : 55, "index" : 2, "subindex" : 4,"specific" : 1}},
+		"Thankyou" : {"readable" : "Thank You x3", "cmd" : "action", "params" : { "input" : 48, "index" : 0, "subindex" : 0,"specific" : 1}},
+		"bye-bye":{"readable" : "Bye Bye!", "cmd" : "action", "params" : { "input" : 43, "index" : 0, "subindex" : 10, "specific" : 3}},
+		"legendary!" : {"readable" : "Legendary", "cmd" : "action", "params" : {"input" : 39, "index" : 3, "subindex" : 8, "specific" : 1}},
+		"beatbox":{"readable" : "<beatbox>", "cmd" : "action", "params":{ "input" : 39, "index" : 1, "subindex" : 13, "specific" : 2}},
+		"giggle" : {"readable" : "Giggle", "cmd" : "action", "params" : {"input" : 55, "index" : 2, "subindex" : 14, "specific" : 0}},
+		"puke" : {"readable" : "Puke", "cmd" : "action", "params" : {"input" : 56, "index" : 3, "subindex" : 15, "specific" : 1}},
+		"ermagerd":{"readable" : "Ermahgerd", "cmd" : "action", "params" : {"input" : 44, "index" : 0, "subindex" : 0, "specific" : 7}},
+		"perfect" : {"readable" : "Perfect!", "cmd" : "action", "params" : {"input" : 55, "index" : 1, "subindex" : 2, "specific" : 1}},
 	}
 }
 
-// This is section is for preprogrammed buttons that you can add yourself.
 commands["other2"] = {
 	run : function(fluff, params, callback) {
 		fluff.generalPlusWrite(new Buffer([0x13, 0x00, params.input, params.index, params.subindex, params.specific]), callback);
@@ -254,30 +254,11 @@ commands["other2"] = {
 	readable : "Preprogrammed Antenna colors",
 	description : "Furby antenna buttons",
         buttons : {
-	    "antenna off" :  {"antenna":{"red":0, "blue":0, "green":0}},
-	    "antenna red" :  {"antenna":{"red":255, "blue":0, "green":0}},
-	    "antenna blue" : {"antenna":{"red":0, "blue":255, "green":0}},
-	    "antenna green" : {"antenna":{"red":0, "blue":0, "green":255}},
-	    "antenna white" : {"antenna":{"red":255, "blue":255, "green":255}},
-	}
-}
-
-commands["other3"] = {
-	run : function(fluff, params, callback) {
-		fluff.generalPlusWrite(new Buffer([0x13, 0x00, params.input, params.index, params.subindex, params.specific]), callback);
-	},
-	readable : "Preprogrammed Actions",
-	description : "Furby move / talk buttons",
-        buttons : {
-	    "Oooh, hello":{"action":{"input":40,"index":0,"subindex":0,"specific":3}},
-
-	    "wrestle, wrestle":{"action":{"input":46,"index":0,"subindex":1,"specific":0}},
-	    "must touch":{"action":{"input":46,"index":0,"subindex":1,"specific":1}},
-	    "poke it":{"action":{"input":46,"index":0,"subindex":1,"specific":2}},
-	    "Touch it":{"action":{"input":46,"index":0,"subindex":1,"specific":3}},
-	    "pokey, pokey":{"action":{"input":46,"index":0,"subindex":1,"specific":4}},
-	    "faster":{"action":{"input":55,"index":2,"subindex":23,"specific":0}},
-	    "slower":{"action":{"input": 55,"index":2,"subindex":24,"specific":0}},
+		"antennaoff" :  {"readable" : "Turn Antenna LED Off", "cmd" : "antenna", "params" : {"red" : 0, "blue" : 0, "green" : 0}},
+		"antennared" :  {"readable" : "Antenna LED Red", "cmd" : "antenna", "params" : {"red" : 255, "blue" : 0, "green" : 0}},
+		"antennablue" : {"readable" : "Antenna LED Blue", "cmd" : "antenna", "params" : {"red" : 0, "blue" : 255, "green" : 0}},
+		"antennagreen" : {"readable" : "Antenna LED Green", "cmd" : "antenna", "params" : {"red" : 0, "blue" : 0, "green" : 255}},
+		"antennawhite" : {"readable" : "Turn Antenna LED white", "cmd" : "antenna", "params" : {"red" : 255, "blue" : 255, "green" : 255}},
 	}
 }
 
